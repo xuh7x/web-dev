@@ -27,4 +27,5 @@ while (true) {
 			console.log('Todo Removed')
 		} else {console.log('wrong index')}
 	} else {console.log('Read The Instruction!')}
+
 }
