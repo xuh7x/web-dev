@@ -34,6 +34,16 @@ const scoreP2 = document.querySelector('#p2')
 let valueP1 = 0;
 let valueP2 = 0;
 
+selector.addEventListener('change', function(){
+	winningScore = parseInt(this.value)
+	// reset() the game
+	p1Display.classList.add('winner');  // in the buttonP1, P2 event
+	p2Display.classList.add('loser');
+	// reset color of the scores:
+	p1Display.classList.remove('loser', 'winner');
+	p2Display.classList.remove('loser', 'winner');
+})
+
 buttonP1.addEventListener('click', function(e) {
 	if (valueP1 < selector.value) {
 		valueP1 ++;
