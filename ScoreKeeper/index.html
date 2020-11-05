@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Score Keeper</title>
+</head>
+<body>
+	<section id="scoreKeeper">
+		<div id="image">
+			<img id = 'img' src="https://images.unsplash.com/photo-1516919583355-b065d26684d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80" alt="Png Pong Score Keeper">
+			<span id = 'title'> Ping Pong Score Keeper</span>
+		</div>
+		<div id = "counterContainer" >
+			<h2 id="scores"><span id="p1">0</span> to <span id="p2">0</span></h2>
+			<p>Use the buttons below to keep score.</p>
+			<h3>
+				<b>Playing To</b>
+				<select name="scoreSelector" id="select">
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+
+				</select>
+			</h3>
+			<section id="btns">
+				<button id="playerOne">+1 Player One</button>
+				<button id="playerTwo">+1 Player Two</button>
+				<button id="reset">Reset</button>
+			</section>
+
+		</div>
+	</section>
+
+<script src="app.js"></script>
+</body>
+</html>
