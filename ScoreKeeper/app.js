@@ -41,6 +41,8 @@ buttonP1.addEventListener('click', function(e) {
 		if(valueP1 == selector.value) {
 			scoreP1.style.color = 'red';
 			scoreP2.style.color = 'blue';
+			buttonP1.disabled = true
+			buttonP2.disabled = true
 		}
 	}
 })
@@ -51,10 +53,14 @@ buttonP2.addEventListener('click', function(e) {
 		if(valueP2 == selector.value) {
 			scoreP2.style.color = 'blue';
 			scoreP1.style.color = 'red'
+			buttonP1.disabled = true
+			buttonP2.disabled = true
 		}
 	}
 })
 buttonRes.addEventListener('click', function(e) {
+	buttonP1.disabled = false
+	buttonP2.disabled = false
 	valueP1 = 0;
 	scoreP1.innerText = valueP1;
 	scoreP1.style.color = 'black';
