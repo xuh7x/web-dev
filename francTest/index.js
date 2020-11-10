@@ -1,5 +1,4 @@
 /*the usage of the package in node.js*/
-
 const franc = require('franc');
 const lang = require('langs');
 
