@@ -1,19 +1,26 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> <%= subreddit %></title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> <%= name %></title>
+  <link rel="stylesheet" href="/app.css">
 </head>
 <body>
-    <h1>browsing the <%= subreddit %> subreddit</h1>
-    <% if(num % 2 ===0) { %>
-    <h2>this is an even number</h2>
-    <% } else {%>
-        <h2>That is an odd number!</h2>
-    <% } %>
-    <h3><%= num%2===0 ? 'EVEN': 'ODD'%></h3>
+<h1>browsing the <%= name %> subreddit</h1>
+<h2>this is the property of description: <%= description %></h2>
+<p><%= subscribers%> total subscribers</p>
+<hr>
+
+<% for(let post of posts) { %>
+    <article>
+       <p><%= post.title%> -  <b><%= post.author %></b> </p>
+        <% if(post.img) {%>
+            <img src="<%= post.img %>" alt="">
+        <%  } %>
+   </article>
+<%} %>
 </body>
 </html>
