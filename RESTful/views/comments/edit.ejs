@@ -5,18 +5,15 @@
 	<meta name="viewport"
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Comments index</title>
+	<title>Edit</title>
 </head>
 <body>
-<h1>Comments</h1>
-<ul>
-	<% for (let c of comments) { %>
-		<li>
-			<%= c.comment %> - <b><%= c.username %></b>
-			<a href="/comments/<%= c.id %>">detials</a>
-		</li>
-	<% } %>
-</ul>
-<a href="/comments/new">New Comment</a>
+<h1>Edit</h1>
+<form method="POST" action="/comments/<%= comment.id %>?_method=PATCH">
+<textarea name="comment" id="" cols="30" rows="10">
+	<%= comment.comment %>
+</textarea>
+	<button>Save</button>
+</form>
 </body>
 </html>
