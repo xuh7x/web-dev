@@ -23,6 +23,7 @@ mongoose.connect(
 // exists in dir-'views' based on the current dir (default)   => make the 'views' dir  'mkdir views'
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')   // express helped to require ejs package
+app.use(express.urlencoded({extended: true}))  // parsing application
 //3 router
 app.get('/products', async (req,res) => {
 	const products = await Product.find({})
@@ -30,12 +31,26 @@ app.get('/products', async (req,res) => {
 	// res.send('ALL PRODUCTS WILL BE HERE!')
 	res.render('products/index', { products })
 })
+// 8 router 'new' has to be before the :id router
+app.get('/products/new', (req, res) => {
+	res.render('products/new');
+})
+app.post('/products', async (req, res) => {
+	// to get info from post request body, without parsing, it's undefined
+	// so, tell express to use the middleWare first - app.use(express.urlencoded({extended: true}))
+	const newProduct = Product(req.body);
+	await newProduct.save();  // it takes time, so make it async and wait
+	// res.send(newProduct)
+	// if refresh the page, will send the post over again, need redirect
+	res.redirect(`/products/${newProduct._id}`)
+})
 app.get('/products/:id', async (req,res) =>{
 	const { id } = req.params;
 	const product = await Product.findById(id);
 	console.log(product);
-	res.send('details page')
+	res.render('products/show', { product })
 })
+
 
 //2 use express app to listen on the port
 app.listen(port, () => {
