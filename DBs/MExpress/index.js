@@ -3,6 +3,7 @@ const app = express();//1 express app
 const path = require('path');//1 path of ejs
 const port = 3000; //2 port for the app
 const mongoose = require('mongoose');     //3
+const methodOverride = require('method-override') // 10
 
 // 4 require the Product model
 const Product = require('./models/product');
@@ -24,6 +25,10 @@ mongoose.connect(
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')   // express helped to require ejs package
 app.use(express.urlencoded({extended: true}))  // parsing application
+app.use(methodOverride('_method')) // 10
+
+const categories = ['fruit', 'vegetable', 'dairy', 'fungi']
+
 //3 router
 app.get('/products', async (req,res) => {
 	const products = await Product.find({})
@@ -50,7 +55,19 @@ app.get('/products/:id', async (req,res) =>{
 	console.log(product);
 	res.render('products/show', { product })
 })
-
+app.get('/products/:id/edit', async (req, res) => {
+	//before render edit form, we look up for product details - async
+	const {id} = req.params;
+	const product = await Product.findById(id);
+	res.render('products/edit', { product, categories });
+})
+// put request will overwrite the object
+app.put('/products/:id', async (req, res) => {
+	// a form cannot make a put request => use method-override package
+	const {id} = req.params;
+	const product = await Product.findByIdAndUpdate(id, req.body, {runValidators: true, new: true});
+	res.redirect(`/products/${product._id}`)
+})
 
 //2 use express app to listen on the port
 app.listen(port, () => {
