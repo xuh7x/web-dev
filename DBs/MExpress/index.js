@@ -31,10 +31,18 @@ const categories = ['fruit', 'vegetable', 'dairy', 'fungi']
 
 //3 router
 app.get('/products', async (req,res) => {
-	const products = await Product.find({})
-	// console.log(products)
-	// res.send('ALL PRODUCTS WILL BE HERE!')
-	res.render('products/index', { products })
+	const {category} =  req.query;   // add {} to destructure
+	if(category) {
+		const products =  await Product.find({category })
+		res.render('products/index', {products, category})
+	} else {
+		const products = await Product.find({})
+		res.render('products/index', {products, category:'All'})
+	}
+	// const products = await Product.find({})
+	// // console.log(products)
+	// // res.send('ALL PRODUCTS WILL BE HERE!')
+	// res.render('products/index', { products })
 })
 // 8 router 'new' has to be before the :id router
 app.get('/products/new', (req, res) => {
@@ -68,7 +76,12 @@ app.put('/products/:id', async (req, res) => {
 	const product = await Product.findByIdAndUpdate(id, req.body, {runValidators: true, new: true});
 	res.redirect(`/products/${product._id}`)
 })
-
+// router for delete request
+app.delete('/products/:id', async (req, res) =>{
+	const {id} = req.params;
+	const deletedProduct = await Product.findByIdAndDelete(id);
+	res.redirect('/products');
+})
 //2 use express app to listen on the port
 app.listen(port, () => {
 	console.log('Listening on port 3000');
