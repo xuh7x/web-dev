@@ -31,5 +31,7 @@ const seedDB = async () => {
         await camp.save();
     }
 }
-
-seedDB();
+// seedDB returns promises since it's an async function
+seedDB().then(() => {
+    mongoose.connection.close();
+})
