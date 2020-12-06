@@ -19,7 +19,8 @@ const verifyPassword = (req, res, next) => {
 	if (password === 'chickennugget') {
 		next();
 	}
-	res.send('sorry, wrong password!')
+	// res.send('sorry, wrong password!')
+	throw new Error('Password required!')
 }
 // app.use((req, res, next) => {
 // 	console.log(req, res("this is the first middleware!"));
@@ -38,9 +39,13 @@ app.get('/dogs',verifyPassword, (req, res) => {
 	res.send('DOGS PAGE')
 })
 
+app.get('/error', (req, res, next)=>{
+	chicken.fly();
+})
+
 app.use((req, res) => {
 	//change status code to be 404 for NOT FOUND, then send the text
 	res.status(404).send('NOT FOUND!')   // only runs if the above res never send - end the cycle if dont match any one of them.
 })
 
-app.listen(3000, (() => {console.log('listening on port 3000')}))
+app.listen(3001, (() => {console.log('listening on port 3001')}))
