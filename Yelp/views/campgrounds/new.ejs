@@ -1,31 +1,41 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>New Campground</title>
-</head>
-<body>
-<h1> New Campground </h1>
-
-<form action="/campgrounds" method="post">
-    <div>
-        <label for="title">Title</label>
-        <input type="text" id="title" name="campground[title]">
+<% layout('layouts/boilerplate') %>
+<div class="row">
+    <h1 class="text-center">New Campground</h1>
+    <div class="col-6 offset-3">
+        <form action="/campgrounds" method="post">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="campground[title]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="loc">Location</label>
+                <input class="form-control" type="text" id="loc" name="campground[location]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="img">Image Url</label>
+                <input class="form-control" type="text" id="img" name="campground[image]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price-label">Campground Price</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">$</span>
+                <input type="text" class="form-control" id="price-label" placeholder="0.00" aria-label="price"
+                       aria-describedby="price-label" name="campground[price]">
+            </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="campground[description]"></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-secondary">Add Campground</button>
+            </div>
+        </form>
+        <footer>
+            <a href="/campgrounds">Go Back</a>
+        </footer>
     </div>
-    <div>
-        <label for="loc">Location</label>
-        <input type="text" id="loc" name="campground[location]">
-    </div>
-    <button>Add Campground</button>
-</form>
-<footer>
-    <a href="/campgrounds">Go Back</a>
-</footer>
-</body>
-</html>
+</div>
 
 // if having multiple campground[title/location], when the data is sent via POST request to express app / sever,
 everything in the req.body will be stored under campground => in order to group content.
