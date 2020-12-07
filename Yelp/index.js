@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
-
+const AppError = require('./AppError')
 // on every any request, use morgan middleware - print info, then move on.
 app.use(morgan('tiny'));
 app.use((req, res, next) => {
@@ -20,7 +20,7 @@ const verifyPassword = (req, res, next) => {
 		next();
 	}
 	// res.send('sorry, wrong password!')
-	throw new Error('Password required!')
+	throw new AppError(401, 'Password required!')
 }
 // app.use((req, res, next) => {
 // 	console.log(req, res("this is the first middleware!"));
@@ -42,10 +42,24 @@ app.get('/dogs',verifyPassword, (req, res) => {
 app.get('/error', (req, res, next)=>{
 	chicken.fly();
 })
-
+// 403 forbidden
+app.get('/admin', (req, res) => {
+	throw new AppError(403, 'you are not the admin!')
+})
 app.use((req, res) => {
 	//change status code to be 404 for NOT FOUND, then send the text
 	res.status(404).send('NOT FOUND!')   // only runs if the above res never send - end the cycle if dont match any one of them.
+})
+
+// app.use((err, req, res, next) =>{
+// 	console.log('******************');
+// 	console.log('********ERROR*****');
+// 	console.log('******************');
+// 	next(err);   // err: the default err handler middleware
+// })
+app.use((err, req, res, next) =>{
+	const {status = 500, message = 'Something went wrong' } = err
+	res.status(status).send(message)
 })
 
 app.listen(3001, (() => {console.log('listening on port 3001')}))
