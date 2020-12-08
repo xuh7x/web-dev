@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
+const Joi = require('joi');
 const catchAsync = require('./utils/catchAsync')
 const ExpressError = require('./utils/ExpressError');
 const Campground = require('./models/campground');
@@ -46,7 +47,23 @@ app.get('/campgrounds/new', (req, res) => {
 app.post('/campgrounds', catchAsync(async (req, res, next) => {
 	// try {
 	// throw error here will be catch by catchAsync func, and handled by next()
-	if (!req.body.campground) throw new ExpressError('invalid campground data', 400);
+	// if (!req.body.campground) throw new ExpressError('invalid campground data', 400);
+	// this is not a mongo schema, this is gonna validate the data before tempting save it with mongoose
+	const campgroundJoiSchema = Joi.object({
+		campground: Joi.object({
+			title: Joi.string().required(),
+			price: Joi.number().required().min(0),
+			image: Joi.string().required(),
+			location: Joi.string().required(),
+			description: Joi.string().required()
+		}).required()
+	})
+	const {error} = campgroundJoiSchema.validate(req.body)    //  result.error = {error}
+	if (error) {
+		const msg = error.details.map(el => el.message).join(', ')  // details: [ [Object] ]
+		throw new ExpressError(msg, 400)
+	}
+	console.log(result)
 	const campground = new Campground(req.body.campground); // res.body is empty by default, need to parse
 	await campground.save();
 	res.redirect(`/campgrounds/${campground._id}`);
