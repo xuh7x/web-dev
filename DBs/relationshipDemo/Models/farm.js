@@ -1,4 +1,4 @@
-//ONE TO MANY:
+//ONE TO MANY:     (one of solutions)
 const mongoose = require('mongoose');
 // pull out mongoose.Schema
 const {Schema} = mongoose;
@@ -64,5 +64,5 @@ const addProduct = async () => {
 
 // addProduct()
 Farm.findOne({name: 'Ful Belly Farms'})
-	.populate('products') // show not only id inside of the array - the specific info. The products in farm schema has to have a ref of Product
+	.populate('products') // show not only id inside of the array - the specific info. The products in farm schema has to have a ref of Product - to tell mongoose that we are populating with the actual 'Products' model.
 	.then(farm => console.log(farm))
