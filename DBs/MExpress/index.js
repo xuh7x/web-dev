@@ -67,8 +67,10 @@ app.get('/farms', async (req, res) => {
 app.get('/farms/new', (req, res) => {
 	res.render('farms/new');
 })
-app.get('/farms/:id', async (req, res) =>  {
-	const farm = await Farm.findById(req.params.id);
+app.get('/farms/:id', async (req, res) => {
+	// const farm = await Farm.findById(req.params.id);
+	// populate products under farm
+	const farm = await Farm.findById(req.params.id).populate('products');
 	res.render('farms/show', {farm})
 })
 
@@ -78,9 +80,31 @@ app.post('/farms', async (req, res) => {
 	res.redirect(`/farms`)
 })
 
+app.get('/farms/:id/products/new', async (req, res) => {
+	const {id} = req.params;
+	const farm = await Farm.findById(id);
+	res.render('products/new', {categories, farm})
+})
+app.post('/farms/:id/products', async (req, res) => {
+	// single out the pieces: get these three only in  req.body
+	const {name, price, category} = req.body;
+	// and pass in these three directly into new product:
+	const product = new Product({name, price, category})  // which no farm associated with
+	// if no need to single out, go with new Product(req.body)
+	const {id} = req.params;
+	const farm = await Farm.findById(id);
+	farm.products.push(product);      // add  product in farm
+	product.farm = farm;             // add  farm info in product
+	await farm.save();
+	await product.save();
+	//db.farms.find() => { "_id" : ObjectId("5fd230---d004f2b2c"), "products" : [ ObjectId("5fd36972b---4cc3c3a") ], "name" : "Cxx", ... }
+	//db.products.find() => "farms" : [ ObjectId("5fd36972------------") ]  farms inside product will only show id
+	res.redirect(`/farms/${id}`)
+})
+
 app.get('/products/:id', async (req, res) => {
 	const {id} = req.params;
-	const product = await Product.findById(id);
+	const product = await Product.findById(id).populate('farm', 'name');
 	console.log(product);
 	res.render('products/show', {product})
 })

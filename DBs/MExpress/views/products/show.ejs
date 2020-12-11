@@ -1,24 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title><%= product. name %>></title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= product.name %>></title>
 </head>
 <body>
 <h1><%= product.name %></h1>
 <ul>
-	<li>Price: <%= product.price %></li>
-	 // add a link to query
-	<li>Category: <a href="/products?category=<%= product.category %>"><%= product.category %></a></li>
+    <li>Price: <%= product.price %></li>
+    // add a link to query
+    <li>Category: <a href="/products?category=<%= product.category %>"><%= product.category %></a></li>
+    <li>Farm: <a href="/farms/<%= product.farm._id %>"><%= product.farm.name %></a></li>
 </ul>
 <a href="/products">All Products</a>
 <a href="/products/<%= product._id %>/edit">Edit Product</a>
 // 11 form that send delete request
-<form action="/products/<%=product._id%>?_method=DELETE" method="POST">
-	<button>Delete Product</button>
+<form action="/products/<%= product._id %>?_method=DELETE" method="POST">
+    <button>Delete Product</button>
 </form>
 </body>
 </html>
