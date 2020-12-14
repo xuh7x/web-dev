@@ -5,11 +5,12 @@ const app = express();
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const Joi = require('joi');
-const {campgroundSchema} = require('./schemas');
+const {campgroundSchema, reviewSchema} = require('./schemas.js');
 const catchAsync = require('./utils/catchAsync');
 const ExpressError = require('./utils/ExpressError');
 const Campground = require('./models/campground');
 const methodOverride = require('method-override');
+const Review = require('./models/review');
 
 
 mongoose.connect('mongodb://localhost:27017/yelp-camp', {
@@ -31,11 +32,20 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
-const validateCamground = (req, res, next) => {
+const validateCampground = (req, res, next) => {
 	// this is not a mongo schema, this is gonna validate the data before tempting save it with mongoose
 	const {error} = campgroundSchema.validate(req.body)    //  result.error = {error}
 	if (error) {
 		const msg = error.details.map(el => el.message).join(', ')  // details: [ [Object] ]
+		throw new ExpressError(msg, 400)
+	} else {
+		next();
+	}
+}
+const validateReview = (req, res, next) =>{
+	const{error} = reviewSchema.validate(req.body);
+	if (error) {
+		const msg = error.details.map(el => el.message).join(',')
 		throw new ExpressError(msg, 400)
 	} else {
 		next();
@@ -56,7 +66,7 @@ app.get('/campgrounds/new', (req, res) => {
 });
 
 // validateCampground works as middleware
-app.post('/campgrounds', validateCamground, catchAsync(async (req, res, next) => {
+app.post('/campgrounds', validateCampground, catchAsync(async (req, res, next) => {
 	// try {
 	// throw error here will be catch by catchAsync func, and handled by next()
 	// if (!req.body.campground) throw new ExpressError('invalid campground data', 400);
@@ -68,7 +78,7 @@ app.post('/campgrounds', validateCamground, catchAsync(async (req, res, next) =>
 
 app.get('/campgrounds/:id', catchAsync(async (req, res) => {
 	// console.log(req.params) => { id: '5fc7c975f88e392154295030' }
-	const campground = await Campground.findById(req.params.id);
+	const campground = await Campground.findById(req.params.id).populate('reviews');
 	res.render('campgrounds/show', {campground});
 }));
 
@@ -77,11 +87,28 @@ app.get('/campgrounds/:id/edit', catchAsync(async (req, res) => {
 	res.render(`campgrounds/edit`, {campground});
 }))
 
-app.put('/campgrounds/:id',validateCamground, catchAsync(async (req, res) => {
+app.put('/campgrounds/:id',validateCampground, catchAsync(async (req, res) => {
 	//TODO  ... spread out object !  NOTE! CHECK IT!
 	const {id} = req.params;
 	const campground = await Campground.findByIdAndUpdate(id, {...req.body.campground}, {useFindAndModify: false});
 	res.redirect(`/campgrounds/${campground._id}`)
+}))
+// create review route
+app.post('/campgrounds/:id/reviews', validateReview, catchAsync(async (req, res) => {
+	const campground = await Campground.findById(req.params.id);
+	const review = new Review(req.body.review);
+	// res.send(req.body)
+	campground.reviews.push(review);
+	await review.save();
+	await campground.save();
+	res.redirect(`/campgrounds/${campground._id}`)
+}))
+
+app.delete('/campgrounds/:id/reviews/:reviewId', catchAsync(async (req, res)  =>{
+	const { id, reviewId } = req.params;
+	await Campground.findByIdAndUpdate(id, {$pull: {reviews: reviewId}}) // take the reviewId, and pull anything with the id out of 'reviews'-array of ids
+	await Review.findByIdAndDelete(req.params.reviewId)
+	res.redirect(`/campgrounds/${id}`);
 }))
 
 app.delete('/campgrounds/:id', catchAsync(async (req, res) => {
