@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const catchAsync = require('../utils/catchAsync');
-const {campgroundSchema } = require('../schemas.js');
+const {campgroundSchema} = require('../schemas.js');
 const ExpressError = require('../utils/ExpressError');
 const Campground = require('../models/campground');
 
@@ -41,15 +41,23 @@ router.post('/', validateCampground, catchAsync(async (req, res, next) => {
 router.get('/:id', catchAsync(async (req, res) => {
 	// console.log(req.params) => { id: '5fc7c975f88e392154295030' }
 	const campground = await Campground.findById(req.params.id).populate('reviews');
+	if (!campground) {
+		req.flash('error', 'Cannot find that  campground');
+		return res.redirect('/campgrounds'); //TODO really need this return?
+	}
 	res.render('campgrounds/show', {campground});
 }));
 
 router.get('/:id/edit', catchAsync(async (req, res) => {
 	const campground = await Campground.findById(req.params.id);
+	if (!campground) {
+		req.flash('error', 'Cannot find that  campground');
+		return res.redirect('/campgrounds'); //TODO really need this return?
+	}
 	res.render(`campgrounds/edit`, {campground});
 }))
 
-router.put('/:id',validateCampground, catchAsync(async (req, res) => {
+router.put('/:id', validateCampground, catchAsync(async (req, res) => {
 	//TODO  ... spread out object !  NOTE! CHECK IT!
 	const {id} = req.params;
 	const campground = await Campground.findByIdAndUpdate(id, {...req.body.campground}, {useFindAndModify: false});
