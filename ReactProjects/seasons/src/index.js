@@ -17,18 +17,24 @@ class App extends React.Component {
 		// 1 way to initialize state
 		super(porps);   // super - parent's constructor function
 		
+		// THIS IS THE ONLY TIME WE DO DIRECT ASSIGNMENT TO this.state
 		this.state = { lat: null, }  // if the value is #, set the default to 'null'
+		// updating 'state' on a component causes the component to (almost) instantly rerender
+		
+		// get user's location
+		window.navigator.geolocation.getCurrentPosition(
+			(position) => {
+				// update state use only setState()
+				this.setState({lat: position.coords.latitude})
+			},
+			(err) => console.log(err)
+		);
 	}
 	
 	// render method - is required for every react component we created - have to define render
 	render() {
-		window.navigator.geolocation.getCurrentPosition(
-			(position) => {
-				console.log(position);
-			},
-			(err) => console.log(err)
-		);
-		return <div>Latitude: </div>
+		
+		return <div>Latitude: {this.state.lat}</div>
 	}
 }
 
