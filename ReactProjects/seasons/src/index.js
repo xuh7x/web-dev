@@ -1,36 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-// const App = () => {
-// 	window.navigator.geolocation.getCurrentPosition(
-// 		(position) => {
-// 			console.log(position);
-// 		},
-// 		(err) => console.log(err)
-// 	);
-// 	return <div>latitude: </div>
-// }
+import SeasonDisplay from './SeasonDisplay';
 
 class App extends React.Component {
 	// constructor func is the very first func that is gonna be called when this class is created
-	constructor(porps) {
-		// 1 way to initialize state
-		super(porps);   // super - parent's constructor function
-		
-		// THIS IS THE ONLY TIME WE DO DIRECT ASSIGNMENT TO this.state
-		this.state = { lat: null, errorMessage: '' }  // if the value is #, set the default to 'null'
-		// updating 'state' on a component causes the component to (almost) instantly rerender
-		
+	// constructor(porps) {
+	// 	super(porps);   // super - parent's constructor function
+	// 	// one way to initialize state
+	// 	// THIS IS THE ONLY TIME WE DO DIRECT ASSIGNMENT TO this.state
+	// 	this.state = {lat: null, errorMessage: ''}  // if the value is #, set the default to 'null'
+	// 	// updating 'state' on a component causes the component to (almost) instantly rerender
+	// }
+	// Alternate state initialization
+	state = {lat: null, errorMessage: ''}  // babeljs will automatically create constructor...
+	
+	// one-time methods for updating state
+	componentDidMount() {
 		// get user's location
 		window.navigator.geolocation.getCurrentPosition(
-			// this callback func is not gonna be invoked until we eventually return from the constructor.
-			(position) => {
-				// update state use only setState(), run below when we successfully fetch the position
-				this.setState({lat: position.coords.latitude})
-			},
-			(err) => {
-				this.setState({errorMessage: err.message})
-			}
+			// update state use only setState(), run below when we successfully fetch the position
+			(position) => this.setState({lat: position.coords.latitude}),
+			(err) => this.setState({errorMessage: err.message})
 		);
 	}
 	
@@ -40,7 +30,7 @@ class App extends React.Component {
 			return <div>Error: {this.state.errorMessage}</div>
 		}
 		if (this.state.lat && !this.state.errorMessage) {
-			return <div>Latitude: {this.state.lat}</div>
+			return <SeasonDisplay lat={this.state.lat}/>
 		}
 		return <div>Loading...</div>
 	}
