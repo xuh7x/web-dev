@@ -5,14 +5,18 @@ class SearchBar extends React.Component {
 	// 	console.log(event.target.value);
 	// }
 	state = {term: ''};
-	onFormSubmit(event) {
+	onFormSubmit = (event) => {        // is a shorthand for onFormSubmit: function(event){}
 		event.preventDefault();
+		// console.log(this.state.term);  // 'this' undefined : turn the func into arrow func: onFormSubmit = (event) => { }
+		this.props.onSubmit(this.state.term);   // when in a class based component, we refer 'props' object with 'this.props'
 	}
 	
 	render() {
 		return (
 			<div className="ui segment">
+				{/*// when submit the form, run onFormSubmit*/}
 				<form onSubmit={this.onFormSubmit} className="ui form">
+					{/*// pass in a reference of the function 'this.onFormSubmit' without ()*/}
 					<div className="field">
 						<label htmlFor="search">Image Search</label>
 						<input id="search" type="text" value={this.state.term}
