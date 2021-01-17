@@ -26,9 +26,9 @@ const productSchema = new Schema({ // simplified because const {Schema} = mongoo
 
 
 // Product.insertMany([
-// 	{name: 'Goddess Melon', price: 4.99, season: 'Summer'},
-// 	{name: 'Sugar Baby Watermelon', price: 4.99, season: 'Summer'},
-// 	{name: 'Asparagus', price: 3.99, season: 'Spring'}
+// 	{name: 'Goddess Melon', price: 4.99, 001Season: 'Summer'},
+// 	{name: 'Sugar Baby Watermelon', price: 4.99, 001Season: 'Summer'},
+// 	{name: 'Asparagus', price: 3.99, 001Season: 'Spring'}
 // ])
 
 // create the parent model - farm
