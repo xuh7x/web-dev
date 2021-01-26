@@ -1,4 +1,4 @@
-// Widget App
+// App.js from Widget App
 import React from 'react';
 import Accordion from './components/Accordion';
 
