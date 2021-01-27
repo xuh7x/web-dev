@@ -1,6 +1,7 @@
 // App.js from Widget App
 import React from 'react';
 import Accordion from './components/Accordion';
+import Search from './components/Search';
 
 const items = [
 	{
@@ -20,7 +21,8 @@ const items = [
 export default () => {
 	return (
 		<div className="ui container">
-			<Accordion items={items}/>
+			{/*<Accordion items={items}/>*/}
+			<Search />
 		</div>
 	)
 }
