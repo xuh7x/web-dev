@@ -45,7 +45,7 @@ const Search = () => {
 		// 		console.log(response.data)
 		// 	});
 		
-	}, [term]);
+	}, [term, results.length]);  // add length will make another bug
 	
 	const renderedResults = results.map((res) => {
 		return (
