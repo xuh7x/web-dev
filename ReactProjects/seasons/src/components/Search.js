@@ -3,7 +3,19 @@ import axios from 'axios';
 
 const Search = () => {
 	const [term, setTerm] = useState('program');   // set a default search term
+	const [debouncedTerm, setDebouncedTerm] = useState(term);
 	const [results, setResults] = useState([]);
+	
+	useEffect(() => {  // redo useEffect(), 1st.
+		const timerId = setTimer(() => {
+			setDebouncedTerm(term);
+		}, 1000);
+		return () => {
+			clearTimeout(timerId);
+		}
+	}, [term])
+	
+	
 	useEffect(() => {
 		// - console.log('initial render or term was changed')
 		// the only thing allowed return is another function :  return () => { }
@@ -34,17 +46,6 @@ const Search = () => {
 				clearTimeout(timeoutId);
 			}
 		}
-		// if (term) search();  // or make a default search term
-		// method 2            same as #1  no performance benefit at all, use either readable
-		// (async () => {
-		// 	await axios.get('222')
-		// })();
-		// method 3
-		// axios.get('111')
-		// 	.then((response) => {
-		// 		console.log(response.data)
-		// 	});
-		
 	}, [term, results.length]);  // add length will make another bug
 	
 	const renderedResults = results.map((res) => {
