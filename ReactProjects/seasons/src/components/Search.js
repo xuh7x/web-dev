@@ -7,7 +7,7 @@ const Search = () => {
 	const [results, setResults] = useState([]);
 	
 	useEffect(() => {  // redo useEffect(), 1st.
-		const timerId = setTimer(() => {
+		const timerId = setTimeout(() => {
 			setDebouncedTerm(term);
 		}, 1000);
 		return () => {
@@ -15,38 +15,21 @@ const Search = () => {
 		}
 	}, [term])
 	
-	
-	useEffect(() => {
-		// - console.log('initial render or term was changed')
-		// the only thing allowed return is another function :  return () => { }
-		// the first render will return the below, then, anytime run the effect function again, react will first call the
-		// cleanup func that got from last time use effect ran, then it's gonna call the effect() again.
-		// - return () => { console.log('cleanup')};
-		// make request anytime term changes
-		// we cannot make effect func as async func. instead, write the async func inside of effect and call it immediately
-		const search = async () => {   // method 1
+	useEffect(() => {  // redo useEffect(), 2nd, and remove the below one 👇
+		const search = async () => {
 			const {data} = await axios.get('https://en.wikipedia.org/w/api.php', {
-				params: {  // axios will code params as query string, and append on to the end of the url above
+				params: {
 					action: 'query',
 					list: 'search',
 					origin: '*',
 					format: 'json',
-					srsearch: term,
+					srsearch: debouncedTerm,
 				}
 			});
 			setResults(data.query.search);
 		}
-		if (term && !results.length) {
-			search();
-		} else {
-			const timeoutId = setTimeout(() => {
-				if (term) search();
-			}, 600);
-			return () => {
-				clearTimeout(timeoutId);
-			}
-		}
-	}, [term, results.length]);  // add length will make another bug
+		search();
+	},[debouncedTerm])
 	
 	const renderedResults = results.map((res) => {
 		return (
