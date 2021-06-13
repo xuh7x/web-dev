@@ -37,7 +37,7 @@ class App extends React.Component {
 	
 	render() {
 		return (
-			<div className="ui container">App
+			<div className="ui container">
 				<div className="ui grid">
 					<div className="ui row">  {/*if not having ui row, the ending item in a row might be rendered to the second row*/}
 						<div className="sixteen wide column">
