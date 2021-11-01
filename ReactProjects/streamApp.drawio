@@ -1,5 +1,5 @@
-<mxfile host="app.diagrams.net" modified="2021-11-01T07:32:59.353Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36" etag="WaeFsI_2u47w5hH64fh4" version="15.6.3" type="github">
-  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+<mxfile host="app.diagrams.net" modified="2021-11-01T07:36:10.318Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36" etag="tCGIFdnw_2fN73Nu11AD" version="15.6.3" type="github">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Stream">
     <mxGraphModel dx="2934" dy="1894" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -399,6 +399,9 @@
         <mxCell id="WfcRYJGrjbSngu5oHJgd-27" value="make request to backend API to create the stream" style="whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="-350" y="1970" width="370" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="WfcRYJGrjbSngu5oHJgd-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.009;entryY=0.434;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=16;fontColor=#FF6666;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WfcRYJGrjbSngu5oHJgd-28" target="WfcRYJGrjbSngu5oHJgd-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="WfcRYJGrjbSngu5oHJgd-28" value="API responds with success or error" style="whiteSpace=wrap;html=1;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="-350" y="2040" width="290" height="30" as="geometry" />
         </mxCell>
@@ -407,6 +410,9 @@
         </mxCell>
         <mxCell id="WfcRYJGrjbSngu5oHJgd-31" value="either show error to user or navigate user back to the stream list" style="whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="-350" y="2080" width="470" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WfcRYJGrjbSngu5oHJgd-33" value="in AC after dispatch manually" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;fontSize=16;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="25" y="2046" width="220" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
