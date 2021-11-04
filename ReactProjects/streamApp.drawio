@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-11-04T02:12:15.092Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36" etag="Gf0Cv_qykABdDeLTgk1y" version="15.6.6" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-04T02:12:54.820Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36" etag="T0h7ZMbtDnwy6Go_p8Qr" version="15.6.6" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Stream">
     <mxGraphModel dx="3160" dy="2022" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -435,8 +435,8 @@
         <mxCell id="y4hHNyFAI9TqMM2ZKjQi-6" value="&lt;font color=&quot;#ff6666&quot;&gt;history.js&amp;nbsp;&lt;/font&gt; &amp;nbsp;under ./src" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=default;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="-280" y="2200" width="170" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="y4hHNyFAI9TqMM2ZKjQi-7" value="&lt;pre style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace ; font-size: 16.5pt&quot;&gt;&lt;font color=&quot;#ff6666&quot;&gt;&amp;lt;&lt;font&gt;Router &lt;span style=&quot;font-style: italic&quot;&gt;history&lt;/span&gt;={history}&lt;/font&gt;&amp;gt;&lt;/font&gt;&lt;/pre&gt;" style="whiteSpace=wrap;html=1;fontSize=16;align=left;strokeColor=#6c8ebf;fillColor=#dae8fc;fontColor=default;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="-467.5" y="2360" width="365" height="50" as="geometry" />
+        <mxCell id="y4hHNyFAI9TqMM2ZKjQi-7" value="&lt;pre style=&quot;font-family: &amp;quot;jetbrains mono&amp;quot; , monospace ; font-size: 16.5pt&quot;&gt;&amp;lt;&lt;span style=&quot;font-family: &amp;quot;jetbrains mono&amp;quot;, monospace; font-size: 16.5pt;&quot;&gt;BrowserRouter&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;jetbrains mono&amp;quot;, monospace; font-size: 16.5pt;&quot;&gt;&amp;gt;  &amp;gt;&amp;gt;&amp;gt;  &lt;/span&gt;&lt;font&gt;&amp;lt;&lt;font&gt;Router &lt;span style=&quot;font-style: italic&quot;&gt;history&lt;/span&gt;={history}&lt;/font&gt;&amp;gt;&lt;/font&gt;&lt;/pre&gt;" style="whiteSpace=wrap;html=1;fontSize=16;align=left;strokeColor=#6c8ebf;fillColor=#dae8fc;fontColor=default;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-553.75" y="2370" width="587.5" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
