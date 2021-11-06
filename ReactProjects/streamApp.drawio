@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-11-04T12:03:18.189Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36" etag="vXlId9wz1WGuBFrZAvTJ" version="15.6.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-06T05:35:56.940Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36" etag="Zl0htaby8QGWUMcXWaWi" version="15.6.8" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Stream">
-    <mxGraphModel dx="2934" dy="1894" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4310" dy="2205" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -113,7 +113,7 @@
           <mxGeometry x="325" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="3ZLGVI5_L8edAR1RSdMJ-57" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;align=center;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="-1520" y="-140" width="970" height="1300" as="geometry" />
+          <mxGeometry x="-1860" y="-470" width="970" height="1300" as="geometry" />
         </mxCell>
         <mxCell id="3ZLGVI5_L8edAR1RSdMJ-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;fontSize=16;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3ZLGVI5_L8edAR1RSdMJ-58" target="3ZLGVI5_L8edAR1RSdMJ-60" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -438,50 +438,102 @@
         <mxCell id="y4hHNyFAI9TqMM2ZKjQi-7" value="&lt;pre style=&quot;font-family: &amp;quot;jetbrains mono&amp;quot; , monospace ; font-size: 16.5pt&quot;&gt;&amp;lt;&lt;span style=&quot;font-family: &amp;quot;jetbrains mono&amp;quot;, monospace; font-size: 16.5pt;&quot;&gt;BrowserRouter&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;jetbrains mono&amp;quot;, monospace; font-size: 16.5pt;&quot;&gt;&amp;gt;  &amp;gt;&amp;gt;&amp;gt;  &lt;/span&gt;&lt;font&gt;&amp;lt;&lt;font&gt;Router &lt;span style=&quot;font-style: italic&quot;&gt;history&lt;/span&gt;={history}&lt;/font&gt;&amp;gt;&lt;/font&gt;&lt;/pre&gt;" style="whiteSpace=wrap;html=1;fontSize=16;align=left;strokeColor=#6c8ebf;fillColor=#dae8fc;fontColor=default;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-430" y="2520" width="587.5" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-0" value="&lt;font style=&quot;font-size: 21px&quot;&gt;Component &lt;b&gt;&lt;font color=&quot;#ff3399&quot;&gt;Isolation &lt;/font&gt;&lt;/b&gt;with React Router&lt;/font&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.05714285714285714;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-0" value="&lt;font style=&quot;font-size: 21px&quot;&gt;Component &lt;b&gt;&lt;font color=&quot;#ff3399&quot;&gt;Isolation &lt;/font&gt;&lt;/b&gt;with React Router&lt;/font&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.05714285714285714;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-90" y="2760" width="540" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-1" value="" style="endArrow=classic;html=1;rounded=0;fontSize=16;fontColor=default;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-1" value="" style="endArrow=classic;html=1;rounded=0;fontSize=16;fontColor=default;" parent="WIyWlLk6GJQsqaUBKTNV-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-330" y="2830" as="sourcePoint" />
             <mxPoint x="-330" y="3250" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-2" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;open /streams/edit/3 from address bar&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-2" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;open /streams/edit/3 from address bar&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-316.25" y="2840" width="356.25" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-5" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;loads up app&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-5" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;loads up app&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-316.25" y="2880" width="356.25" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-6" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;Redux state object is empty&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-6" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;Redux state object is empty&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-316.25" y="2920" width="356.25" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-7" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;try to select stream with id &#39;3&#39; from state&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-7" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;try to select stream with id &#39;3&#39; from state&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-314.37" y="2960" width="356.25" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-8" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;No streams were loaded, get undefined!&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-8" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;No streams were loaded, get undefined!&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-316.25" y="3000" width="356.25" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-9" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;nav to root - &#39;/&#39;&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-9" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;nav to root - &#39;/&#39;&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-316.25" y="3040" width="356.25" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-10" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;StreamList fetches all streams, update Redux state&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-10" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;StreamList fetches all streams, update Redux state&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-316.25" y="3080" width="366.25" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-11" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;nav back to &#39;/streams/edit/3&#39;&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-11" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;nav back to &#39;/streams/edit/3&#39;&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-314.37" y="3130" width="354.37" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-12" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;select stream with id of 3&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-12" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;select stream with id of 3&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-316.25" y="3170" width="354.37" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-13" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;Data is now in redux store&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-13" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 16px&quot;&gt;Data is now in redux store&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fontColor=#FF3399;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-316.87" y="3210" width="354.37" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FF6666;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Z3-2gtRXMlmIIY3j-O8p-14" target="Z3-2gtRXMlmIIY3j-O8p-8">
+        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FF6666;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Z3-2gtRXMlmIIY3j-O8p-14" target="Z3-2gtRXMlmIIY3j-O8p-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-14" value="&lt;b&gt;With &lt;font color=&quot;#ff6666&quot;&gt;React-Router&lt;/font&gt;, each component needs to be designed to &lt;font color=&quot;#ff0080&quot;&gt;work in isolation&lt;/font&gt; ( fetch its own data! )&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;fontColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=16;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Z3-2gtRXMlmIIY3j-O8p-14" target="2lLdbGpEwpA7F2Ddr7QA-0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Z3-2gtRXMlmIIY3j-O8p-14" target="2lLdbGpEwpA7F2Ddr7QA-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="460" y="2910" />
+              <mxPoint x="460" y="2820" />
+              <mxPoint x="740" y="2820" />
+              <mxPoint x="740" y="2860" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z3-2gtRXMlmIIY3j-O8p-14" value="&lt;b&gt;With &lt;font color=&quot;#ff6666&quot;&gt;React-Router&lt;/font&gt;, each component needs to be designed to &lt;font color=&quot;#ff0080&quot;&gt;work in isolation&lt;/font&gt; ( fetch its own data! )&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;fontColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="100" y="2860" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;fontSize=16;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="2lLdbGpEwpA7F2Ddr7QA-0" target="2lLdbGpEwpA7F2Ddr7QA-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-0" value="&lt;font style=&quot;font-size: 16px&quot;&gt;StreamCreate&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="530" y="2840" width="125" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;fontSize=16;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="2lLdbGpEwpA7F2Ddr7QA-2" target="2lLdbGpEwpA7F2Ddr7QA-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=16;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="2lLdbGpEwpA7F2Ddr7QA-2" target="2lLdbGpEwpA7F2Ddr7QA-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-2" value="&lt;font style=&quot;font-size: 16px&quot;&gt;StreamEdit&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="780" y="2840" width="125" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-6" value="" style="group" vertex="1" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="639.23" y="3010" width="160.76999999999998" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-4" value="&lt;span style=&quot;font-size: 16px&quot;&gt;ReduxForm&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="2lLdbGpEwpA7F2Ddr7QA-6">
+          <mxGeometry width="160.77" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-5" value="StreamForm" style="whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="2lLdbGpEwpA7F2Ddr7QA-6">
+          <mxGeometry x="20" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-12" value="" style="group" vertex="1" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="841" y="2900" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-9" value="onSubmit" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;fontSize=16;" vertex="1" parent="2lLdbGpEwpA7F2Ddr7QA-12">
+          <mxGeometry width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-10" value="initialValues" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;fontSize=16;" vertex="1" parent="2lLdbGpEwpA7F2Ddr7QA-12">
+          <mxGeometry y="20" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-13" value="onSubmit" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;fontSize=16;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="590" y="2903" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2lLdbGpEwpA7F2Ddr7QA-17" value="&lt;font style=&quot;font-size: 16px&quot;&gt;fetchStream&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="941" y="2980" width="105" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
